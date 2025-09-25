@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#app {
+  width: 1400px;
+  padding: 10px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  gap: 20px
+}
+
+canvas, #console {
+  border: 1px solid lightgray;
+}
+
+#console {
+  height: 100%;
+  font-family: monospace;
+  text-align: left;
+  flex: 1 0;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
