@@ -26,10 +26,24 @@ if (!context) throw Error('Could not create canvas context!');
 
 // ### YOUR DRAWING CODE GOES HERE ###
 
+const logo = new Image();
+logo.src = '/sfcm.png';
+logo.onload = function () {
+context.drawImage(logo, 130, 125, 750, 100);
+};
+
 const myPath = new Path2D();
-myPath.rect(0, 0, 350, 400);
+myPath.rect(0, 0, 1000, 1000);
 context.fillStyle = 'blue'; // set the fill color
 context.fill(myPath); // do the actual filling
+
+const myCircle2 = new Path2D();
+myCircle2.arc(500, 500, 200, 0, Math.PI * 2);
+context.strokeStyle = 'black';
+context.lineWidth = 11;
+context.stroke(myCircle2);
+context.fillStyle = 'yellow'; // set the fill color
+context.fill(myCircle2); 
 
 const myCircle = new Path2D();
 myCircle.arc(425, 440, 30, 0, Math.PI * 2);
@@ -40,15 +54,16 @@ context.fillStyle = 'black'; // set the fill color
 context.fill(myCircle); 
 
 
+
 const myRect = new Path2D();
-myPath.rect(535, 440, 70, 15);
+myRect.rect(535, 440, 70, 15);
 context.fillStyle = 'black'; // set the fill color
-context.fill(myPath); // do the actual filling
+context.fill(myRect); // do the actual filling
 
 const mySmile = new Path2D();
-myCircle.arc(0, 0, 150, 0, Math.PI * 0.1);
+mySmile.arc(500, 500, 150, 0, Math.PI);
 context.strokeStyle = 'black';
 context.lineWidth = 11;
 context.stroke(mySmile);
 context.fillStyle = 'black'; // set the fill color
-context.fill(mySmile); 
+
