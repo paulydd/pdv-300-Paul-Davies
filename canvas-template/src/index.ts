@@ -19,51 +19,59 @@ canvas.style.height = canvasSize.h + 'px';
 // this sets the number of pixels WITHIN the canvas (resolution)
 canvas.width = canvasSize.w;
 canvas.height = canvasSize.h;
-
-// get a reference to the context, where we do our drawing
 const context = canvas.getContext('2d');
-if (!context) throw Error('Could not create canvas context!');
-
-// ### YOUR DRAWING CODE GOES HERE ###
-
-const logo = new Image();
-logo.src = '/sfcm.png';
-logo.onload = function () {
-context.drawImage(logo, 130, 125, 750, 100);
-};
-
+        if (!context) throw Error('Could not create canvas context!');
+        
+    
 const myPath = new Path2D();
 myPath.rect(0, 0, 1000, 1000);
 context.fillStyle = 'blue'; // set the fill color
 context.fill(myPath); // do the actual filling
 
-const myCircle2 = new Path2D();
-myCircle2.arc(500, 500, 200, 0, Math.PI * 2);
-context.strokeStyle = 'black';
-context.lineWidth = 11;
-context.stroke(myCircle2);
-context.fillStyle = 'yellow'; // set the fill color
-context.fill(myCircle2); 
+// get a reference to the context, where we do our drawing
+function thousandsmiles() {
+    for (let i = 0; i<1000;i++){
+        const context = canvas.getContext('2d');
+        if (!context) throw Error('Could not create canvas context!');
+        
+        let Xcenter = Math.ceil(Math.random() * 1000)
+        let Ycenter = Math.ceil(Math.random() * 1000)
+        let radius = Math.ceil(Math.random() * 90 + 20)
 
-const myCircle = new Path2D();
-myCircle.arc(425, 440, 30, 0, Math.PI * 2);
-context.strokeStyle = 'black';
-context.lineWidth = 11;
-context.stroke(myCircle);
-context.fillStyle = 'black'; // set the fill color
-context.fill(myCircle); 
+        const face = new Path2D();
+        face.arc(Xcenter, Ycenter, radius, 0, Math.PI * 2);
+        context.strokeStyle = 'black';
+        context.lineWidth = 11;
+        context.stroke(face);
+        context.fillStyle = 'yellow'; // set the fill color
+        context.fill(face); 
+        
+        const eye = new Path2D();
+       eye.arc(Xcenter - (radius * 0.4), Ycenter - (radius * 0.38), radius * (30 / 200), 0, Math.PI * 2);
+        context.strokeStyle = 'black';
+        context.lineWidth = 11;
+        context.stroke(eye);
+        context.fillStyle = 'black'; // set the fill color
+        context.fill(eye); 
+        
+        
+        
+        const wink = new Path2D();
+        wink.rect(Xcenter + (radius * 0.3), Ycenter - (radius * 0.38), radius * (70 / 200), radius * (15 / 200));
+        context.fillStyle = 'black'; // set the fill color
+        context.fill(wink); // do the actual filling
+        
+        const smile = new Path2D();
+        smile.arc(Xcenter, Ycenter + (0.1 * radius), radius * (150 / 200), 0, Math.PI);
+        context.strokeStyle = 'black';
+        context.lineWidth = 3.5;
+        context.stroke(smile);
+        context.fillStyle = 'black'; // set the fill color
+    
+    
 
+}
+}
 
-
-const myRect = new Path2D();
-myRect.rect(535, 440, 70, 15);
-context.fillStyle = 'black'; // set the fill color
-context.fill(myRect); // do the actual filling
-
-const mySmile = new Path2D();
-mySmile.arc(500, 500, 150, 0, Math.PI);
-context.strokeStyle = 'black';
-context.lineWidth = 11;
-context.stroke(mySmile);
-context.fillStyle = 'black'; // set the fill color
+thousandsmiles()
 
