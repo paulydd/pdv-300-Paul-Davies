@@ -1,4 +1,7 @@
+
+import { draw, DrawableCircle, DrawableShape } from './graphics';
 console.log('Hello, Paulyd!');
+import { Circle } from './shapes';
 
 // ### SETUP ###
 
@@ -72,6 +75,8 @@ function thousandsmiles() {
 
 }
 }
-
-thousandsmiles()
+const drawableCircle = new DrawableShape(new Circle(90));
+drawableCircle.fillColor = 'magenta';
+draw(drawableCircle, context, 300, 300);
+//thousandsmiles()
 
