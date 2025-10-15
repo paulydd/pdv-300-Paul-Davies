@@ -13,3 +13,24 @@ export interface Shape {
             return thePath;
         }
     }
+    export interface Shape {
+        path(): Path2D;
+    }
+    
+    export class Rectangle implements Shape {
+        width: number;
+        height: number;
+    
+        constructor(width: number, height: number) {
+            this.width = width;
+            this.height = height;
+        }
+    
+        path(): Path2D {
+            const thePath = new Path2D();
+            thePath.rect(0, 0, this.width, this.height);
+            return thePath;
+        }
+    }
+    
+    let bob = new Rectangle(10,20)

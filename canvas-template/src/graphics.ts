@@ -1,3 +1,6 @@
+import { type Shape } from './shapes.ts'
+import { type Entity } from './entity.ts';
+
 
 interface Drawable {
     draw(ctx: CanvasRenderingContext2D): void;
@@ -19,21 +22,27 @@ export class DrawableCircle implements Drawable {
         ctx.fillStyle = this.fillColor;
         ctx.fill(path);
     }
-    
+
     fillColor: string = 'lightblue';
 
 }
 export class DrawableShape implements Drawable {
     shape: Shape;
     constructor(shape: Shape) {
-    this.shape = shape;
+        this.shape = shape;
     }
     fillColor: string = 'lightblue';
     draw(ctx: CanvasRenderingContext2D): void {
-    const path = this.shape.path();
-    ctx.fillStyle = this.fillColor;
-    ctx.fill(path);
+        const path = this.shape.path();
+        ctx.fillStyle = this.fillColor;
+        ctx.fill(path);
     }
-   
+
 }
-    import {type Shape} from './shapes.ts'
+
+
+export function drawEntity(entity: Entity, ctx: CanvasRenderingContext2D) {
+    if (entity.drawable) {
+        draw(entity.drawable, ctx, entity.position.x, entity.position.y)
+    }
+}

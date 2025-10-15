@@ -2,6 +2,7 @@
 import { draw, DrawableCircle, DrawableShape } from './graphics';
 console.log('Hello, Paulyd!');
 import { Circle } from './shapes';
+import {Rectangle} from './shapes';
 
 // ### SETUP ###
 
@@ -78,5 +79,9 @@ function thousandsmiles() {
 const drawableCircle = new DrawableShape(new Circle(90));
 drawableCircle.fillColor = 'magenta';
 draw(drawableCircle, context, 300, 300);
+
+const drawableRectangle = new DrawableShape(new Rectangle(120, 80));
+drawableRectangle.fillColor = 'cyan';
+draw(drawableRectangle, context, 100, 300);
 //thousandsmiles()
 
