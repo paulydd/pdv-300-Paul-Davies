@@ -1,3 +1,5 @@
+import type { PhysicalBody } from "./physics";
+
 export class Vec2 {
     x: number;
     y: number;
@@ -16,6 +18,7 @@ export interface Drawable {
 export class Entity {
     position: Vec2;
     drawable: Drawable | null = null;
+    body: PhysicalBody | null = null;
     constructor(position: Vec2,) {
         this.position = position
 

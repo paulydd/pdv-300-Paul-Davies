@@ -1,7 +1,6 @@
 import { type Shape } from './shapes.ts'
 import { type Entity } from './entity.ts';
 
-
 interface Drawable {
     draw(ctx: CanvasRenderingContext2D): void;
 }

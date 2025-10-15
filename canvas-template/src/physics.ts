@@ -1,19 +1,17 @@
-export class Vec2 {
-    x: number;
-    y: number;
-    constructor(x: number, y: number) {
+import { Vec2 } from "./entity";
+import { Entity } from "./entity";
 
-        this.x = x;
-        this.y = y;
-    }
+
+export class PhysicalBody {
+    velocity = new Vec2(0, 0);
 
 }
-export class PhysicalBody{
-    velocity: Vec2; 
-     {
-
-        this.x = x;
-        this.y = y;
+export function updateEntity(myEntity: Entity, deltaT: number) {
+    if (myEntity.body) {
+        myEntity.position.x = myEntity.position.x + (myEntity.body.velocity.x * deltaT)
+        myEntity.position.y = myEntity.position.y + (myEntity.body.velocity.y * deltaT)
     }
+
+
 
 }

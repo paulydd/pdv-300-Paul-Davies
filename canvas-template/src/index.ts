@@ -1,8 +1,32 @@
+import { allEntities } from './engine';
+import { Entity, Vec2 } from './entity';
+import { DrawableShape } from './graphics';
+import { PhysicalBody } from './physics';
+import { Circle } from './shapes';
+// create an Entity at (10, 10)
+let aMovingEntity = new Entity(new Vec2(10, 10));
+// add a Drawable to the Entity
+let aDrawable = new DrawableShape(new Circle(40));
+aDrawable.fillColor = 'maroon';
+aMovingEntity.drawable = aDrawable;
+// add a PhysicalBody to the Entity
+let aBody = new PhysicalBody();
+aBody.velocity = new Vec2(20, 20);
+aMovingEntity.body = aBody;
+// add the Entity to the array of Entities!
+allEntities.push(aMovingEntity)
 
+
+
+
+/*
 import { draw, DrawableCircle, DrawableShape } from './graphics';
 console.log('Hello, Paulyd!');
 import { Circle } from './shapes';
 import {Rectangle} from './shapes';
+import {Entity} from './entity';
+import {Vec2} from './entity';
+import { drawEntity } from './graphics';
 
 // ### SETUP ###
 
@@ -27,7 +51,7 @@ const context = canvas.getContext('2d');
         if (!context) throw Error('Could not create canvas context!');
         
     
-const myPath = new Path2D();
+/*const myPath = new Path2D();
 myPath.rect(0, 0, 1000, 1000);
 context.fillStyle = 'blue'; // set the fill color
 context.fill(myPath); // do the actual filling
@@ -85,3 +109,12 @@ drawableRectangle.fillColor = 'cyan';
 draw(drawableRectangle, context, 100, 300);
 //thousandsmiles()
 
+let myFirstEntity = new Entity(new Vec2(400, 250));
+let aDrawableCircle = new DrawableShape(new Circle(90));
+aDrawableCircle.fillColor = 'chartreuse';
+myFirstEntity.drawable = aDrawableCircle;
+
+drawEntity(myFirstEntity, context);
+
+
+*/
