@@ -132,12 +132,34 @@ engine.addEntity(mainInteractionEntity);
 
 // TODO: Create the canon Entity as described in the assignment
 
+let cannon = new Entity('cannon')
+cannon.position = new Vec2(50, H-50);
+let cannonDrawable = new Sprite('/canon.png', new Vec2(100,100) )
+cannon.drawable = cannonDrawable
+engine.addEntity(cannon)
+
+
 mainInteraction.onKeyDown = function (key: string) {
   console.log('onKeyDown: "' + key + '"');
+if(key==='ArrowUp')
+cannon.transform.rotation -= Math.PI / 24
+if(key==='ArrowDown')
+cannon.transform.rotation += Math.PI / 24
+
+
   // TODO: Add keyboard interactions as described in the assignment
 };
 
 // TODO: write the makeProjectile function as described!
+fucntion MakeProjectile (){
+
+let projectile = new Entity('projectile')
+projectile.position = new Vec2(50, H-50);
+
+}
+
+
+
 
 engine.onCollision = function (collision: Collision) {
   // TODO: if the Collision contains one projectile and one block, remove them both from the engine
