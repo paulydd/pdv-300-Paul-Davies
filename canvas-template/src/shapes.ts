@@ -33,4 +33,4 @@ export interface Shape {
         }
     }
     
-    let bob = new Rectangle(10,20)
+    

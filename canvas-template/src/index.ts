@@ -2,11 +2,13 @@ import { allEntities } from './engine';
 import { Entity, Vec2 } from './entity';
 import { DrawableShape } from './graphics';
 import { PhysicalBody } from './physics';
-import { Circle } from './shapes';
+import { Circle,Rectangle } from './shapes';
+
 // create an Entity at (10, 10)
 let aMovingEntity = new Entity(new Vec2(10, 10));
+aMovingEntity.rotation = Math.PI/4
 // add a Drawable to the Entity
-let aDrawable = new DrawableShape(new Circle(40));
+let aDrawable = new DrawableShape(new Rectangle(40,50));
 aDrawable.fillColor = 'maroon';
 aMovingEntity.drawable = aDrawable;
 // add a PhysicalBody to the Entity

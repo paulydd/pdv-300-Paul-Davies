@@ -4,9 +4,10 @@ import { type Entity } from './entity.ts';
 interface Drawable {
     draw(ctx: CanvasRenderingContext2D): void;
 }
-export function draw(drawable: Drawable, ctx: CanvasRenderingContext2D, x: number, y: number) {
+export function draw(drawable: Drawable, ctx: CanvasRenderingContext2D, x: number, y: number, rotation: number) {
     ctx.save();
     ctx.translate(x, y);
+    ctx.rotate(rotation)
     drawable.draw(ctx);
     ctx.restore();
 }
@@ -42,6 +43,7 @@ export class DrawableShape implements Drawable {
 
 export function drawEntity(entity: Entity, ctx: CanvasRenderingContext2D) {
     if (entity.drawable) {
-        draw(entity.drawable, ctx, entity.position.x, entity.position.y)
+        draw(entity.drawable, ctx, entity.position.x, entity.position.y, entity.rotation)
     }
 }
+

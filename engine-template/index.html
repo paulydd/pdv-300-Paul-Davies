@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Engine</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div id="headerBar">
+        <span id="spacer"></span>
+        <button id="pauseGame">Pause</button>
+        <span id="fpsLabel">fps: 0.0</span>
+      </div>
+
+      <canvas id="gameCanvas" />
+    </div>
+    <div id="console" />
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

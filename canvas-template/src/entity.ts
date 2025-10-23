@@ -12,16 +12,19 @@ export class Vec2 {
 }
 export interface Drawable {
     draw(ctx: CanvasRenderingContext2D): void;
-  }
-  
+}
+
 
 export class Entity {
     position: Vec2;
+    rotation: number = 0
     drawable: Drawable | null = null;
     body: PhysicalBody | null = null;
     constructor(position: Vec2,) {
         this.position = position
 
     }
+
+    
 
 }
