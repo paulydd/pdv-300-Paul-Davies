@@ -1,3 +1,4 @@
+
 import type { Collision } from './engine/collisions';
 import { Body, Circle, Polygon, Engine, Entity, Rectangle, Vec2, DrawableShape, Sprite, Interaction } from './engine/engine';
 import { HUDConsole } from './util/HUDConsole';
@@ -151,12 +152,13 @@ cannon.transform.rotation += Math.PI / 24
 };
 
 // TODO: write the makeProjectile function as described!
-fucntion MakeProjectile (){
-
-let projectile = new Entity('projectile')
-projectile.position = new Vec2(50, H-50);
-
+function MakeProjectile() {
+  let projectile = new Entity('projectile');
+  projectile.position = new Vec2(50, H-50);
 }
+
+
+
 
 
 
